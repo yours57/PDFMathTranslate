@@ -162,6 +162,7 @@ pip install pdf2zh
 
 <details>
   <summary>5. Zotero 插件</summary>
+
 有关更多细节，请参见 [Zotero PDF2zh](https://github.com/guaguastandup/zotero-pdf2zh)。
 
 </details>
@@ -240,7 +241,7 @@ $env:HF_ENDPOINT = https://hf-mirror.com
 | `--dir`      | [批量翻译]                                                                                                   | `pdf2zh --dir /path/to/translate/`             |
 | `--config`   | [配置文件](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#cofig)                       | `pdf2zh --config /path/to/config/config.json`  |
 | `--serverport` | [自定义 gradio 服务器端口]                                                                                 | `pdf2zh --serverport 7860`                     |
-
+| `--babeldoc`| 使用实验性后端 [BabelDOC](https://funstory-ai.github.io/BabelDOC/) 翻译 |`pdf2zh --babeldoc` -s openai example.pdf|
 有关详细说明，请参阅我们的文档 [高级用法](./docs/ADVANCED.md)，以获取每个选项的完整列表。
 
 <h2 id="downstream">二次开发 (API)</h2>

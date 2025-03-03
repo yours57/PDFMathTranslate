@@ -162,6 +162,8 @@ For docker deployment on cloud service:
 
 <details>
   <summary>5. Zotero Plugin</summary>
+
+
 See [Zotero PDF2zh](https://github.com/guaguastandup/zotero-pdf2zh) for more details.
 
 </details>
@@ -240,6 +242,7 @@ In the following table, we list all advanced options for reference:
 | `--dir`        | [batch translate]                                                                                             | `pdf2zh --dir /path/to/translate/`             |
 | `--config`     | [configuration file](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#cofig)             | `pdf2zh --config /path/to/config/config.json`  |
 | `--serverport` | [custom gradio server port]                                                                                   | `pdf2zh --serverport 7860`                     |
+|`--babeldoc`| Use Experimental backend [BabelDOC](https://funstory-ai.github.io/BabelDOC/) to translate |`pdf2zh --babeldoc` -s openai example.pdf|
 
 For detailed explanations, please refer to our document about [Advanced Usage](./docs/ADVANCED.md) for a full list of each option.
 
