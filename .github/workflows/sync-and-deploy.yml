@@ -102,7 +102,24 @@ jobs:
           trap cleanup SIGTERM SIGINT
           echo "$APP_USERS" > /app/users.txt
           chmod 600 /app/users.txt
-          echo "{}" > /app/config.json
+          cat > /app/config.json << CONFIG_EOF
+          {
+              "translators": [
+                  {
+                      "name": "openai",
+                      "envs": {
+                          "OPENAI_BASE_URL": "${OPENAI_BASE_URL}",
+                          "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+                          "OPENAI_MODEL": "${OPENAI_MODEL}"
+                      }
+                  }
+              ],
+              "ENABLED_SERVICES": [
+                  "OpenAI"
+              ],
+              "HIDDEN_GRADIO_DETAILS": true
+          }
+          CONFIG_EOF
           pdf2zh -i --authorized /app/users.txt --config /app/config.json &
           if [ ! -f "$UPLOADED_FILES_RECORD" ]; then
               touch "$UPLOADED_FILES_RECORD"
