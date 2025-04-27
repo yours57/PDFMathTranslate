@@ -102,7 +102,8 @@ jobs:
           trap cleanup SIGTERM SIGINT
           echo "$APP_USERS" > /app/users.txt
           chmod 600 /app/users.txt
-          pdf2zh -i --authorized /app/users.txt &
+          echo "{}" > /app/config.json
+          pdf2zh -i --authorized /app/users.txt --config /app/config.json &
           if [ ! -f "$UPLOADED_FILES_RECORD" ]; then
               touch "$UPLOADED_FILES_RECORD"
           fi
